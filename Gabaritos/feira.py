@@ -5,12 +5,13 @@ c = int(input())
 clientes = list(map(int, input().split()))
 estoque = []
 total = 0
+
 for i in range(n):
     estoque.append((precos[i], tipos[i]))
 estoque.sort()
 
 for cliente in clientes:
-    if cliente == 0:
+    if cliente == 0 and len(estoque)>0:
         venda=estoque.pop(0)
         total+=venda[0]
         #print(f"Indeciso - {venda}")
